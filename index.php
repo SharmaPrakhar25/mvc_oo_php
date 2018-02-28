@@ -16,6 +16,6 @@
   <title>login</title>
 </head>
 <body>
-
+    <!-- index.php?email=&password= -->
 </body>
 </html>

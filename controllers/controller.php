@@ -4,10 +4,8 @@
    */
   class Controller
   {
-
     function __construct()
     {
-      # code...
       $this -> models = new Model();
     }
 
@@ -15,13 +13,16 @@
       $this -> $email = $email;
       $this -> $password = $password;
       $result = $this->models->login($email,$password);
-      // if($result == 'login successfully'){
-      //   //include 'views/afterlogin.php';
-      // }
-      // else{
-      //   //include 'views/login.php';
-      // }
       echo $result;
+    }
+
+    public function signup_controller($first_name,$last_name,$email,$password,$mobile){
+      $this->$first_name = $first_name;
+      $this->last_name = $last_name;
+      $email->$email = $email;
+      $this->$password = $password;
+      $this->$mobile = $mobile;
+      $result = $this->models->signup($first_name,$last_name,$email,$password,$mobile);
     }
   }
 

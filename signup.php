@@ -9,7 +9,7 @@
     $mobile = $_REQUEST['mobile'];
     $controller -> signup_controller($first_name,$last_name,$email,$password,$mobile);
   }else{
-    $data = array("code"=>"400", "status"=>"Empty email and password");
+    $data = array("code"=>"400", "status"=>"Empty Fields");
     echo json_encode($data);
   }
 ?>

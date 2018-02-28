@@ -38,7 +38,7 @@
           return json_encode($data);
         }else{
           $query2 = ($this->con->query("INSERT into users set first_name='$first_name',last_name='$last_name',email='$email',password='$password',mobile='$mobile'"));
-          if($query2->num_rows){
+          if($query2->num_rows){  
             $data = array("code"=>"200","status"=>"User registered successfully");
             return json_encode($data);
           }else{

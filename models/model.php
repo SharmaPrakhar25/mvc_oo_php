@@ -1,19 +1,17 @@
 <?php
-  /**
-   *
-   */
-  require_once('db_connect.php');
+  require_once("db_connect.php");
   session_start();
   class Model
   {
-    function __construct()
+    public $con;
+    public function __construct()
     {
-      $db = new db_connect();
+      $this->con = new db_connect();
     }
 
     public function login($email,$password){
-      $query = $db->query("SELECT * from users where email='$email' AND password='$password'");
-      if($query){
+      $query = ($this->con->query("SELECT * from users where email='$email' AND password='$password'"));
+      if($query->num_rows){
         $data = array("status"=>"login successfully");
         return json_encode($data);
       }else{

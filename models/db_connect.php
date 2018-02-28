@@ -2,23 +2,23 @@
   /**
    *
    */
+   require_once('config.php');
   class db_connect
   {
-
-    function __construct()
+    public $connection;
+    public function __construct()
     {
-      require_once('config.php');
-      $con = new mysqli(db_host,db_user,db_password,db_database);
-      if(!$con){
+      $this->connection = new mysqli(db_host,db_user,db_password,db_database);
+      if(!$this->connection){
         die("Can not connect to database");
       }else{
-        echo "connected successfully";
-        return $con;
+        //echo "connected successfully";
       }
     }
 
-    function query($sql){
-      $que = $this->mysqli->query($sql);
+    public function query($sql){
+      $que = mysqli_query($this->connection, $sql);
+      return $que;
     }
   }
 

@@ -1,9 +1,9 @@
 <?php
   require_once('controllers/controller.php');
   $controller = new Controller();
-  if(empty($email) == 'false' && empty($password) == 'false'){
-    $email = $_REQUEST['email'];
-    $password = $_REQUEST['password'];
+  $email = $_REQUEST['email'];
+  $password = $_REQUEST['password'];
+  if(!empty($email) && !empty($password) ){
     $controller -> login_controller($email,$password);
   }else{
     $data = array("code"=>"400", "status"=>"Empty email and password");
@@ -17,5 +17,6 @@
 </head>
 <body>
     <!-- index.php?email=&password= -->
+	<h1>Index page</h1>
 </body>
 </html>

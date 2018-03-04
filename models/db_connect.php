@@ -12,7 +12,7 @@
       if(!$this->connection){
         die("Can not connect to database");
       }else{
-        //echo "connected successfully";
+        echo "connected successfully";
       }
     }
 
